@@ -39,7 +39,7 @@ const dashboard = {
             id: 'user',
             title: 'Users',
             type: 'item',
-            url: '/user/default',
+            url: '/users',
             icon: icons.UsergroupAddOutlined,
             breadcrumbs: false
         },
@@ -47,7 +47,7 @@ const dashboard = {
             id: 'batches',
             title: 'Batches',
             type: 'item',
-            url: '/batches/default',
+            url: '/batches',
             icon: icons.AppstoreAddOutlined,
             breadcrumbs: false
         },

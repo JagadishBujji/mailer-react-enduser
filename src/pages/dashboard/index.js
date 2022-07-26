@@ -34,6 +34,7 @@ import avatar2 from 'assets/images/users/avatar-2.png';
 import avatar3 from 'assets/images/users/avatar-3.png';
 import avatar4 from 'assets/images/users/avatar-4.png';
 import Search from 'layout/MainLayout/Header/HeaderContent/Search';
+
 // import MyCalendar from './MyCalendar';
 
 // avatar style

@@ -40,6 +40,10 @@ const MainRoutes = {
             ]
         },
         {
+            path: 'users',
+            element: <h1>userss</h1>
+        },
+        {
             path: 'sample-page',
             element: <SamplePage />
         },
