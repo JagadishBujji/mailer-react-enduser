@@ -3,6 +3,7 @@ import { lazy } from 'react';
 // project import
 import Loadable from 'components/Loadable';
 import MainLayout from 'layout/MainLayout';
+import Users from 'pages/Users/index';
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
@@ -41,7 +42,11 @@ const MainRoutes = {
         },
         {
             path: 'users',
-            element: <h1>userss</h1>
+            element: <Users />
+        },
+        {
+            path: 'batches',
+            element: <h1>Batches</h1>
         },
         {
             path: 'sample-page',

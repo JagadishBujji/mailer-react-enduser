@@ -23,7 +23,7 @@ const AnalyticEcommerce = ({ color, title, count, percentage, isLoss, extra }) =
                         {count}
                     </Typography>
                 </Grid>
-                {percentage && (
+                {/* {percentage && (
                     <Grid item>
                         <Chip
                             variant="combined"
@@ -39,7 +39,7 @@ const AnalyticEcommerce = ({ color, title, count, percentage, isLoss, extra }) =
                             size="small"
                         />
                     </Grid>
-                )}
+                )} */}
             </Grid>
         </Stack>
         {/* <Box sx={{ pt: 2.25 }}>

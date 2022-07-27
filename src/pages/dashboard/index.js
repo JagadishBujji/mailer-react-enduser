@@ -33,7 +33,10 @@ import avatar1 from 'assets/images/users/avatar-1.png';
 import avatar2 from 'assets/images/users/avatar-2.png';
 import avatar3 from 'assets/images/users/avatar-3.png';
 import avatar4 from 'assets/images/users/avatar-4.png';
-import Search from 'layout/MainLayout/Header/HeaderContent/Search';
+
+import MyCalender from './MyCalender';
+import TableSearch from './TableSearch';
+import BasicModal from './BasicModal';
 
 // import MyCalendar from './MyCalendar';
 
@@ -86,29 +89,45 @@ const DashboardDefault = () => {
                 <Typography variant="h5">Dashboard</Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Batches" count="05" percentage={59.3} extra="35,000" />
+                <AnalyticEcommerce title="Batches" count="05" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Templates" count="10" percentage={70.5} extra="8,900" />
+                <AnalyticEcommerce title="Templates" count="10" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Today Mails" count="15" percentage={27.4} isLoss color="warning" extra="1,943" />
+                <AnalyticEcommerce title="Today Mails" count="15" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Week Mails" count="25" percentage={27.4} isLoss color="warning" extra="$20,395" />
+                <AnalyticEcommerce title="Week Mails" count="25" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Total Mails" count="35" percentage={27.4} isLoss color="warning" extra="$20,395" />
+                <AnalyticEcommerce title="Total Mails" count="35" />
             </Grid>
-            {/* <Grid item xs={12} sx={{ mb: -2.25 }}>
-                <Typography variant="h5">Dashboard</Typography>
-                <Search />
-            </Grid> */}
-
+            <Grid item xs={12} sx={{ mb: -2.25 }}>
+                <Grid container rowSpacing={4.5} columnSpacing={2.75}>
+                    <Grid item xs={12} sm={6} md={4} lg={2} sx={{ display: 'flex', alignItems: 'center' }}>
+                        <Typography variant="h5">
+                            Date : <span>10/07/2022</span>
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={2}>
+                        <AnalyticEcommerce title="Send" count="10" />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={2}>
+                        <AnalyticEcommerce title="Queue" count="05" />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={2}>
+                        <AnalyticEcommerce title="Total" count="15" />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={2} sx={{ display: 'flex', alignItems: 'center' }}>
+                        <Typography variant="h5">Last Mail Name & Time</Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
+            {/* <Search /> */}
             <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
-
             {/* row 2 */}
-            <Grid item xs={12} md={7} lg={8}>
+            {/* <Grid item xs={12} md={7} lg={8}>
                 <Grid container alignItems="center" justifyContent="space-between">
                     <Grid item>
                         <Typography variant="h5">Unique Visitor</Typography>
@@ -158,13 +177,19 @@ const DashboardDefault = () => {
                     </Box>
                     <MonthlyBarChart />
                 </MainCard>
-            </Grid>
-
+            </Grid> */}
             {/* row 3 */}
             <Grid item xs={12} md={7} lg={8}>
                 <Grid container alignItems="center" justifyContent="space-between">
                     <Grid item>
                         <Typography variant="h5">Recent Orders</Typography>
+                        <div className="schedule" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <TableSearch />
+                            {/* <Button variant="contained" sx={{ ml: 2, width: '100%' }}>
+                                + New Schedule
+                            </Button> */}
+                            <BasicModal />
+                        </div>
                     </Grid>
                     <Grid item />
                 </Grid>
@@ -180,27 +205,31 @@ const DashboardDefault = () => {
                     <Grid item />
                 </Grid>
                 <MainCard sx={{ mt: 2 }} content={false}>
-                    {/* <List sx={{ p: 0, '& .MuiListItemButton-root': { py: 2 } }}>
+                    {/* <ReportAreaChart /> */}
+                    <MyCalender />
+                </MainCard>
+                <MainCard sx={{ mt: 2 }} content={false}>
+                    <List sx={{ p: 0, '& .MuiListItemButton-root': { py: 2 } }}>
+                        <Typography sx={{ textAlign: 'center', mt: 2 }} variant="h5">
+                            Next Batch List
+                        </Typography>
                         <ListItemButton divider>
-                            <ListItemText primary="Company Finance Growth" />
-                            <Typography variant="h5">+45.14%</Typography>
+                            <ListItemText primary="Jagadish Kumar" />
+                            {/* <Typography variant="h5">+45.14%</Typography> */}
                         </ListItemButton>
                         <ListItemButton divider>
-                            <ListItemText primary="Company Expenses Ratio" />
-                            <Typography variant="h5">0.58%</Typography>
+                            <ListItemText primary="sanjay Kumar" />
+                            {/* <Typography variant="h5">0.58%</Typography> */}
                         </ListItemButton>
                         <ListItemButton>
-                            <ListItemText primary="Business Risk Cases" />
-                            <Typography variant="h5">Low</Typography>
+                            <ListItemText primary="Praveen" />
+                            {/* <Typography variant="h5">Low</Typography> */}
                         </ListItemButton>
                     </List>
-                    <ReportAreaChart /> */}
-                    {/* <MyCalendar /> */}
                 </MainCard>
             </Grid>
-
             {/* row 4 */}
-            <Grid item xs={12} md={7} lg={8}>
+            {/* <Grid item xs={12} md={7} lg={8}>
                 <Grid container alignItems="center" justifyContent="space-between">
                     <Grid item>
                         <Typography variant="h5">Sales Report</Typography>
@@ -353,7 +382,8 @@ const DashboardDefault = () => {
                         </Button>
                     </Stack>
                 </MainCard>
-            </Grid>
+            </Grid>{' '}
+            */}
         </Grid>
     );
 };

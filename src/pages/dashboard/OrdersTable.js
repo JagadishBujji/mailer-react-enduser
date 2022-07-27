@@ -19,6 +19,11 @@ const rows = [
     createData('jagadish', 'Camera Lens', 40, '22/01/22'),
     createData('jagadish', 'Camera Lens', 40, '22/01/22'),
     createData('jagadish', 'Camera Lens', 40, '22/01/22'),
+    createData('jagadish', 'Camera Lens', 40, '22/01/22'),
+    createData('jagadish', 'Camera Lens', 40, '22/01/22'),
+    createData('jagadish', 'Camera Lens', 40, '22/01/22'),
+    createData('jagadish', 'Camera Lens', 40, '22/01/22'),
+    createData('jagadish', 'Camera Lens', 40, '22/01/22'),
     createData('jagadish', 'Camera Lens', 40, '22/01/22')
 ];
 
@@ -178,7 +183,7 @@ export default function OrderTable() {
                         }
                     }}
                 >
-                    <OrderTableHead order={order} orderBy={orderBy} />
+                    <OrderTableHead sx={{ maxHeight: 600, overflowY: 'scroll' }} order={order} orderBy={orderBy} />
                     <TableBody>
                         {stableSort(rows, getComparator(order, orderBy)).map((row, index) => {
                             const isItemSelected = isSelected(row.trackingNo);
