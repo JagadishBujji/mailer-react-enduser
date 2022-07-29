@@ -1,38 +1,23 @@
 import { useState } from 'react';
 
 // material-ui
-import {
-    Avatar,
-    AvatarGroup,
-    Box,
-    Button,
-    Grid,
-    List,
-    ListItemAvatar,
-    ListItemButton,
-    ListItemSecondaryAction,
-    ListItemText,
-    MenuItem,
-    Stack,
-    TextField,
-    Typography
-} from '@mui/material';
-
+import { Grid, List, ListItemButton, ListItemText, Typography } from '@mui/material';
+import styles from './calendar.module.css';
 // project import
 import OrdersTable from './OrdersTable';
-import IncomeAreaChart from './IncomeAreaChart';
-import MonthlyBarChart from './MonthlyBarChart';
-import ReportAreaChart from './ReportAreaChart';
-import SalesColumnChart from './SalesColumnChart';
+// import IncomeAreaChart from './IncomeAreaChart';
+// import MonthlyBarChart from './MonthlyBarChart';
+// import ReportAreaChart from './ReportAreaChart';
+// import SalesColumnChart from './SalesColumnChart';
 import MainCard from 'components/MainCard';
 import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
 
-// assets
-import { GiftOutlined, MessageOutlined, SettingOutlined } from '@ant-design/icons';
-import avatar1 from 'assets/images/users/avatar-1.png';
-import avatar2 from 'assets/images/users/avatar-2.png';
-import avatar3 from 'assets/images/users/avatar-3.png';
-import avatar4 from 'assets/images/users/avatar-4.png';
+// // assets
+// import { GiftOutlined, MessageOutlined, SettingOutlined } from '@ant-design/icons';
+// import avatar1 from 'assets/images/users/avatar-1.png';
+// import avatar2 from 'assets/images/users/avatar-2.png';
+// import avatar3 from 'assets/images/users/avatar-3.png';
+// import avatar4 from 'assets/images/users/avatar-4.png';
 
 import MyCalender from './MyCalender';
 import TableSearch from './TableSearch';
@@ -89,19 +74,19 @@ const DashboardDefault = () => {
                 <Typography variant="h5">Dashboard</Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Batches" count="05" />
+                <AnalyticEcommerce color="info" title="Batches" count="05" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Templates" count="10" />
+                <AnalyticEcommerce color="warning" title="Templates" count="10" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Today Mails" count="15" />
+                <AnalyticEcommerce color="error" title="Today Mails" count="15" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Week Mails" count="25" />
+                <AnalyticEcommerce color="secondary" title="Week Mails" count="25" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={2}>
-                <AnalyticEcommerce title="Total Mails" count="35" />
+                <AnalyticEcommerce color="success" title="Total Mails" count="35" />
             </Grid>
             <Grid item xs={12} sx={{ mb: -2.25 }}>
                 <Grid container rowSpacing={4.5} columnSpacing={2.75}>
@@ -125,7 +110,7 @@ const DashboardDefault = () => {
                 </Grid>
             </Grid>
             {/* <Search /> */}
-            <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
+            {/* <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} /> */}
             {/* row 2 */}
             {/* <Grid item xs={12} md={7} lg={8}>
                 <Grid container alignItems="center" justifyContent="space-between">
@@ -209,10 +194,22 @@ const DashboardDefault = () => {
                     <MyCalender />
                 </MainCard>
                 <MainCard sx={{ mt: 2 }} content={false}>
-                    <List sx={{ p: 0, '& .MuiListItemButton-root': { py: 2 } }}>
-                        <Typography sx={{ textAlign: 'center', mt: 2 }} variant="h5">
-                            Next Batch List
-                        </Typography>
+                    <Typography sx={{ textAlign: 'center', mt: 2, mb: 2 }} variant="h5">
+                        Next Batch List
+                    </Typography>
+                    <List sx={{ p: 0, '& .MuiListItemButton-root': { py: 2 } }} className={styles.batcheslist}>
+                        <ListItemButton divider>
+                            <ListItemText primary="Jagadish Kumar" />
+                            {/* <Typography variant="h5">+45.14%</Typography> */}
+                        </ListItemButton>
+                        <ListItemButton divider>
+                            <ListItemText primary="sanjay Kumar" />
+                            {/* <Typography variant="h5">0.58%</Typography> */}
+                        </ListItemButton>
+                        <ListItemButton>
+                            <ListItemText primary="Praveen" />
+                            {/* <Typography variant="h5">Low</Typography> */}
+                        </ListItemButton>
                         <ListItemButton divider>
                             <ListItemText primary="Jagadish Kumar" />
                             {/* <Typography variant="h5">+45.14%</Typography> */}

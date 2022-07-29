@@ -10,7 +10,7 @@ const TableSearch = () => (
     <Box sx={{ ml: { xs: 0, md: 1 } }}>
         <FormControl sx={{ width: { xs: '100%', md: 500 } }}>
             <OutlinedInput
-                size="small"
+                size="Normal"
                 id="header-search"
                 startAdornment={
                     <InputAdornment position="start" sx={{ mr: -0.5 }}>

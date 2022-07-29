@@ -24,6 +24,10 @@ const rows = [
     createData('jagadish', 'Camera Lens', 40, '22/01/22'),
     createData('jagadish', 'Camera Lens', 40, '22/01/22'),
     createData('jagadish', 'Camera Lens', 40, '22/01/22'),
+    createData('jagadish', 'Camera Lens', 40, '22/01/22'),
+    createData('jagadish', 'Camera Lens', 40, '22/01/22'),
+    createData('jagadish', 'Camera Lens', 40, '22/01/22'),
+    createData('jagadish', 'Camera Lens', 40, '22/01/22'),
     createData('jagadish', 'Camera Lens', 40, '22/01/22')
 ];
 
@@ -101,6 +105,7 @@ function OrderTableHead({ order, orderBy }) {
                         align={headCell.align}
                         padding={headCell.disablePadding ? 'none' : 'normal'}
                         sortDirection={orderBy === headCell.id ? order : false}
+                        sx={{ position: 'sticky', top: 0, background: '#fff' }}
                     >
                         {headCell.label}
                     </TableCell>
@@ -165,6 +170,8 @@ export default function OrderTable() {
             <TableContainer
                 sx={{
                     width: '100%',
+                    maxHeight: 600,
+                    overflowy: 'scroll',
                     overflowX: 'auto',
                     position: 'relative',
                     display: 'block',
@@ -200,9 +207,9 @@ export default function OrderTable() {
                                     selected={isItemSelected}
                                 >
                                     <TableCell component="th" id={labelId} scope="row" align="left">
-                                        <Link color="secondary" component={RouterLink} to="">
-                                            {row.trackingNo}
-                                        </Link>
+                                        {/* <Link color="secondary" component={RouterLink} to=""> */}
+                                        {row.trackingNo}
+                                        {/* </Link> */}
                                     </TableCell>
                                     <TableCell align="left">{row.name}</TableCell>
                                     <TableCell align="right">{row.fat}</TableCell>
